@@ -110,7 +110,7 @@ export const RegisterForm = () => {
                 <span>Username:</span>
                 <input type="text"
                        value={form.username.value}
-                       class={form.username.error ? 'error' : ''}
+                       className={form.username.error ? 'error' : ''}
                        onInput={updateField('username')}/>
                 {form.username.error && <span>{form.username.error}</span>}
             </label>
@@ -119,7 +119,7 @@ export const RegisterForm = () => {
                 <span>Password:</span>
                 <input type="password"
                        value={form.password.value}
-                       class={form.password.error ? 'error' : ''}
+                       className={form.password.error ? 'error' : ''}
                        onInput={updateField('password')}/>
                 {form.password.error && <span>{form.password.error}</span>}
             </label>
@@ -128,7 +128,7 @@ export const RegisterForm = () => {
                 <span>Confirm Password:</span>
                 <input type="password"
                        value={form.confirmPassword.value}
-                       class={form.confirmPassword.error ? 'error' : ''}
+                       className={form.confirmPassword.error ? 'error' : ''}
                        onInput={updateField('confirmPassword')}/>
                 {form.confirmPassword.error && <span>{form.confirmPassword.error}</span>}
             </label>
