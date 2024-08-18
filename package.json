@@ -1,0 +1,62 @@
+{
+  "name": "@zodactive-form/react",
+  "description": "React wrapper for @zodactive-form/core",
+  "version": "0.0.0",
+  "author": "CedSharp <cedascsharp@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ced-Sharp/zodactive-form-react.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/zodactive-form-react.umd.js",
+  "module": "dist/zodactive-form-react.js",
+  "types": "dist/zodactive-form-react.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/zodactive-form-react.js",
+      "require": "./dist/zodactive-form-react.umd.js",
+      "types": "./dist/zodactive-form-react.d.ts"
+    }
+  },
+  "scripts": {
+    "prebuild": "rimraf dist && rimraf types && npm run lint && npm run test",
+    "build": "vite build && npm run minify && tsc && rollup -c",
+    "build:types": "tsc && rollup -c && bash setup-types.sh",
+    "lint": "biome check src",
+    "minify": "esbuild dist/zodactive-form-react.js --minify --outfile=dist/zodactive-form-react.js --allow-overwrite",
+    "prepublishOnly": "npm run build",
+    "test": "vitest --run"
+  },
+  "dependencies": {
+    "@zodactive-form/core": "^0.1.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "esbuild": "^0.21.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "jsdom": "^24.1.0",
+    "rimraf": "^5.0.7",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitest": "^1.6.0"
+  },
+  "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
+}

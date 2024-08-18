@@ -1,0 +1,9 @@
+node_modules/
+dist/
+types/
+.idea/
+.vscode/
+pnpm-lock.yaml
+package-lock.json
+yarn-lock.yaml
+bun.lockb
